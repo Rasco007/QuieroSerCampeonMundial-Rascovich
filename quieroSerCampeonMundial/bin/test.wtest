@@ -1,0 +1,45 @@
+import example.*
+
+describe "los jugadores juegan contra Australia(demanda fisica=20)" {
+	
+	
+	
+	const argentina = new Seleccion(nombre="Argentina", jugadores=[pulga,dibu,eldiego],tecnico=scaloni)
+	
+	const dima = new Jugador(apellido="diMaria", edad=34,estadoFisico=78,nivelFelicidad=72)
+   
+
+    test "Juega Di Maria"{
+      dima.jugarPartido(20)
+      assert.equals( 58, dima.estadoFisico())
+    }
+    
+    test "Juega Dibu"{
+      dibu.jugarPartido(20)
+      assert.equals( 72, dibu.estadoFisico())
+      assert.equals( 87, dibu.nivelFelicidad())
+    }
+    
+    test "Juega Messi"{
+      pulga.jugarPartido(20)
+      assert.equals( 50, pulga.estadoFisico())
+      assert.equals( 73, scaloni.agradoConLaSeleccion())
+    }
+    
+    
+    test "Juega El Diego"{
+      eldiego.jugarPartido(20)
+      assert.equals( 100, pulga.nivelFelicidad())
+      assert.equals( 60, dibu.nivelSalvacion())
+    }
+    
+    test "¿Somos Campeones?"{
+      pulga.jugarPartido(20)
+      dima.jugarPartido(20)
+      dibu.jugarPartido(20)
+      eldiego.jugarPartido(20)
+      assert.equals( true, argentina.ganoElMundial())
+    }
+    
+
+}
